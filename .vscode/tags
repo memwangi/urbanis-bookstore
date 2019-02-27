@@ -1,0 +1,30 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ALLOWED_HOSTS	../bibliophile/settings.py	/^ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())$/;"	kind:variable	line:29
+AUTH_PASSWORD_VALIDATORS	../bibliophile/settings.py	/^AUTH_PASSWORD_VALIDATORS = [$/;"	kind:variable	line:92
+BASE_DIR	../bibliophile/settings.py	/^BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))$/;"	kind:variable	line:17
+DATABASES	../bibliophile/settings.py	/^DATABASES = {$/;"	kind:variable	line:77
+DEBUG	../bibliophile/settings.py	/^DEBUG = True$/;"	kind:variable	line:27
+INSTALLED_APPS	../bibliophile/settings.py	/^INSTALLED_APPS = [$/;"	kind:variable	line:34
+LANGUAGE_CODE	../bibliophile/settings.py	/^LANGUAGE_CODE = 'en-us'$/;"	kind:variable	line:111
+MIDDLEWARE	../bibliophile/settings.py	/^MIDDLEWARE = [$/;"	kind:variable	line:43
+ROOT_URLCONF	../bibliophile/settings.py	/^ROOT_URLCONF = 'bibliophile.urls'$/;"	kind:variable	line:53
+SECRET_KEY	../bibliophile/settings.py	/^SECRET_KEY = 'SECRET_KEY'$/;"	kind:variable	line:24
+STATIC_URL	../bibliophile/settings.py	/^STATIC_URL = '\/static\/'$/;"	kind:variable	line:125
+TEMPLATES	../bibliophile/settings.py	/^TEMPLATES = [$/;"	kind:variable	line:55
+TIME_ZONE	../bibliophile/settings.py	/^TIME_ZONE = 'UTC'$/;"	kind:variable	line:113
+USE_I18N	../bibliophile/settings.py	/^USE_I18N = True$/;"	kind:variable	line:115
+USE_L10N	../bibliophile/settings.py	/^USE_L10N = True$/;"	kind:variable	line:117
+USE_TZ	../bibliophile/settings.py	/^USE_TZ = True$/;"	kind:variable	line:119
+WSGI_APPLICATION	../bibliophile/settings.py	/^WSGI_APPLICATION = 'bibliophile.wsgi.application'$/;"	kind:variable	line:71
+__init__.py	../bibliophile/__init__.py	1;"	kind:file	line:1
+application	../bibliophile/wsgi.py	/^application = get_wsgi_application()$/;"	kind:variable	line:16
+manage.py	../manage.py	1;"	kind:file	line:1
+settings.py	../bibliophile/settings.py	1;"	kind:file	line:1
+urlpatterns	../bibliophile/urls.py	/^urlpatterns = [$/;"	kind:variable	line:19
+urls.py	../bibliophile/urls.py	1;"	kind:file	line:1
+wsgi.py	../bibliophile/wsgi.py	1;"	kind:file	line:1
