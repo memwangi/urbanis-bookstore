@@ -1,0 +1,20 @@
+{% extends "catalogue/base_site.html" %}
+
+{% block content %}
+<div class="container">
+  <h1>Book List</h1>
+  {% if book_list %}
+  {% for book in book_list %}
+  <ul class="liststyle one-edge-shadow">
+    <li>
+      <a id="listitem" href="{{ book.get_absolute_url }}">{{ book.title }}</a>
+      <span>({{book.author}})</span>
+    </li>
+  </ul>
+
+  {% endfor %}
+  {% else %}
+  <p>There are no books in the library.</p>
+  {% endif %}
+</div>
+{% endblock %}

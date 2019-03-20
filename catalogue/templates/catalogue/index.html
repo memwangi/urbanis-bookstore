@@ -1,7 +1,8 @@
 {% extends "catalogue/base_site.html" %}
 
+{% block title %} <title>Urbanis Bookshop</title> {% endblock %}
+
 {% block content %}
-  <h3>Urbanis Bookshop Home</h3>
   <p>Welcome to Urbanis <em>We read way past our bedtime...</em></p>
   <h2>Dynamic content</h2>
   <p>The library has the following record counts:</p>
@@ -11,4 +12,6 @@
     <li><strong>Copies available:</strong> {{ num_instances_available }}</li>
     <li><strong>Authors:</strong> {{ num_authors }}</li>
   </ul>
+  <hr>
+  <p>You've visited this page {{num_visits}} times</p>
 {% endblock %}

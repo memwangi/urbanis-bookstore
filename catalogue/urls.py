@@ -1,6 +1,10 @@
 from django.urls import path
-from . import views
+from .views import index, BookListView, BookDetailView, AuthorListView, AuthorDetailView
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('', index, name='index'),
+    path('books/', BookListView.as_view(), name='books'),
+    path(r'^book/(?P<pk>\d+)$', BookDetailView.as_view(), name='book_detail'),
+    path('author/', AuthorListView.as_view(), name='authors'),
+    path(r'^author/(?P<pk>\d+)$', AuthorDetailView.as_view(), name='author_detail')
 ]
