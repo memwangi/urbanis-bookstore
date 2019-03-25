@@ -6,7 +6,7 @@
     justify-items: center;
     list-style: none;
     padding-top: 20px;
-    background-color: rgb(26, 26, 32);
+    background-color: ghostwhite;
     height: 100vh;
 }
 
@@ -15,11 +15,11 @@
 }
 
 #sidenav li {
-    text-transform: uppercase;
+    text-transform: capitalize;
     letter-spacing: 2px;
     font-family: 'Open Sans', sans-serif;
     font-size: 15px;
-    color: white;
+    color:black;
     font-weight: 500;
     padding: 16px;
 }
