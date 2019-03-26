@@ -10,7 +10,16 @@
   <p><strong>ISBN:</strong> {{ book.isbn }}</p> 
   <p><strong>Language:</strong> {{ book.language }}</p>  
   <p><strong>Genre:</strong> {% for genre in book.genre.all %} {{ genre }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>  
-
+  
+  <!--User can update or delete the book if they have the permission: librarians-->
+  <hr>
+  {% if perms.catalogue.can_mark_returned %}
+      <a href="{% url 'book_delete' book.pk %}">Delete</a>
+      {% if book %}
+        <a href="{% url 'book_update' book.pk %}">Update</a>
+      {% endif %}
+  {% endif %}
+  <hr>
   <h4>Details</h4>
    <hr>
   <div id="copia" class="one-edge-shadow">

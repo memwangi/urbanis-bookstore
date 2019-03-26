@@ -4,6 +4,16 @@
   <div class="container">
   <h1>Author: {{ author.first_name }} {{author.last_name}}</h1>
   <p>{{author.date_of_birth}} - {{author.date_of_death}} </p>
+
+  <!--User can update or delete the book if they have the permission: librarians-->
+  <hr>
+  {% if perms.catalogue.can_mark_returned %}
+      <a href="{% url 'author_delete' author.pk %}">Delete</a>
+      {% if author %}
+        <a href="{% url 'author_update' author.pk %}">Update</a>
+      {% endif %}
+  {% endif %}
+  <hr>
   
   <h4>Books</h4>
   <hr>

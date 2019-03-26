@@ -9,12 +9,15 @@
     <li>
       <a id="listitem" href="{{ book.get_absolute_url }}">{{ book.title }}</a>
       <span>({{book.author}})</span>
-    </li>
+      </li>
   </ul>
 
   {% endfor %}
   {% else %}
   <p>There are no books in the library.</p>
+  {% endif %}
+  {% if perms.catalogue.can_mark_returned %}
+    <a href="{% url 'book_create' %}">Add Book</a>
   {% endif %}
 </div>
 {% endblock %}

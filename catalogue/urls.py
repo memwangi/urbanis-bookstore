@@ -1,15 +1,23 @@
 from django.urls import path, re_path
-from .views import index, BookListView, BookDetailView, AuthorListView, AuthorDetailView, LoanedBooksByUserListView, BorrowedBooksLibrarianListView, renew_book_librarian
+from . import views
 
 
 urlpatterns = [
-    path('', index, name='index'),
-    path('mybooks/', LoanedBooksByUserListView.as_view(), name="my-borrowed"),
-    path('borrowed/', BorrowedBooksLibrarianListView.as_view(), name="all-borrowed"),
-    path('books/', BookListView.as_view(), name='books'),
-    re_path(r'^book/(?P<pk>\d+)$', BookDetailView.as_view(), name='book_detail'),
-    path('author/', AuthorListView.as_view(), name='authors'),
-    re_path(r'^author/(?P<pk>\d+)$', AuthorDetailView.as_view(), name='author_detail'),
-    path('book/<uuid:pk>/renew/', renew_book_librarian,
-         name='renew-book-librarian'),
+    path('', views.index, name='index'),
+   
+    path('books/', views.BookListView.as_view(), name='books'),
+    re_path(r'^book/(?P<pk>\d+)$', views.BookDetailView.as_view(), name='book_detail'),
+    path('book/create/', views.BookCreate.as_view(), name='book_create'),
+    path('book/<int:pk>/update/', views.BookUpdate.as_view(), name='book_update'),
+    path('book/<int:pk>/delete', views.BookDelete.as_view(), name='book_delete'),
+    path('mybooks/', views.LoanedBooksByUserListView.as_view(), name="my-borrowed"),
+    path('borrowed/', views.BorrowedBooksLibrarianListView.as_view(), name="all-borrowed"),
+
+    path('author/', views.AuthorListView.as_view(), name='authors'),
+    re_path(r'^author/(?P<pk>\d+)$', views.AuthorDetailView.as_view(), name='author_detail'),
+    path('book/<uuid:pk>/renew/', views.renew_book_librarian, name='renew-book-librarian'),
+    path('author/create/', views.AuthorCreate.as_view(), name='author_create'),
+    path('author/<int:pk>/update/', views.AuthorUpdate.as_view(), name='author_update'),
+    path('author/<int:pk>/delete', views.AuthorDelete.as_view(), name='author_delete'),
+    
 ]

@@ -69,9 +69,24 @@ class BookListView(LoginRequiredMixin, ListView):
     model = Book
     paginate_by = 2
 
-
 class BookDetailView(DetailView):
     model = Book
+
+class BookCreate(CreateView, PermissionRequiredMixin):
+    model = Book
+    fields = "__all__"
+    initial = {"language": 'English'}
+    permission_required = 'catalogue.can_mark_returned'
+
+class BookUpdate(UpdateView, PermissionRequiredMixin):
+    model = Book
+    fields = ['title', 'author', 'summary', 'genre']
+    permission_required = 'catalogue.can_mark_returned'
+
+class BookDelete(DeleteView, PermissionRequiredMixin):
+    model = Book
+    success_url = reverse_lazy('books')
+    permission_required = 'catalogue.can_mark_returned'
 
 
 class LoanedBooksByUserListView(LoginRequiredMixin, ListView):
